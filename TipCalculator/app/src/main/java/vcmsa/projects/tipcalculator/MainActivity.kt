@@ -1,5 +1,6 @@
 package vcmsa.projects.tipcalculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
@@ -36,6 +37,7 @@ class MainActivity() : AppCompatActivity(), Parcelable {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -54,17 +56,23 @@ class MainActivity() : AppCompatActivity(), Parcelable {
         val edtTipPerc = findViewById<EditText>(R.id.edtTipPerc)
         val btnCalc = findViewById<Button>(R.id.btnCalc)
         val txtTip = findViewById<TextView>(R.id.txtTip)
+        val edtSplit = findViewById<EditText>(R.id.edtSplit)
+        val txtTipPerPerson = findViewById<TextView>(R.id.txtTipPerPerson)
 
         //?:0.0 means that if its null the default value will be 0.0
         btnCalc.setOnClickListener() {
             val billAmt = edtBillAmt.text.toString().toDoubleOrNull() ?: 0.0
             val tipPerc = edtTipPerc.text.toString().toDoubleOrNull() ?: 0.0
+            val split = edtSplit.text.toString().toDoubleOrNull()?:0.0
 
             //calculation
             val tipAmnt = billAmt * (tipPerc / 100)
+            val splitAmount = billAmt / split
+            val tipPerPerson = splitAmount * (tipPerc / 100)
 
             //display
             txtTip.text = "Tip Amount: R${String.format("%.2f", tipAmnt)}"
+            txtTipPerPerson.text = "Tip Per Person: R${String.format("%.2f", tipPerPerson)}"
         }
     }
 }

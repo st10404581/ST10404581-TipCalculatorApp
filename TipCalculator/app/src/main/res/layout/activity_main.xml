@@ -24,9 +24,19 @@
         android:id="@+id/txtTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
-        android:layout_marginBottom="44dp"
-        android:text="TextView"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="36dp"
+        android:text="Tip"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTipPerPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="64dp"
+        android:text="Tip Per Person"
         app:layout_constraintBottom_toTopOf="@+id/btnCalc"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -34,8 +44,8 @@
         android:id="@+id/edtTipPerc"
         android:layout_width="213dp"
         android:layout_height="51dp"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Tip %"
         android:inputType="number"
@@ -46,10 +56,22 @@
         android:id="@+id/edtBillAmt"
         android:layout_width="207dp"
         android:layout_height="52dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="Enter Bill Amount"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTipPerc" />
+
+    <EditText
+        android:id="@+id/edtSplit"
+        android:layout_width="207dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Enter Split Number"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTipPerc" />
@@ -68,8 +90,8 @@
         android:id="@+id/imageView3"
         android:layout_width="176dp"
         android:layout_height="151dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitle"
         app:srcCompat="@drawable/quieres" />
